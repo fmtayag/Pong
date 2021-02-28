@@ -4,9 +4,13 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Francis/source/repos/Pong/Pong/Content/background.png</File>
     <File>C:/Users/Francis/source/repos/Pong/Pong/Content/ball.png</File>
+    <File>C:/Users/Francis/source/repos/Pong/Pong/Content/paddle.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
