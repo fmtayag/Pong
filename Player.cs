@@ -17,6 +17,9 @@ namespace Pong
         {
             Move(gameTime);
 
+            Position += Velocity;
+            Velocity = Vector2.Zero;
+
             base.Update(gameTime, sprites);
         }
 
@@ -24,14 +27,10 @@ namespace Pong
         {
             var kstate = Keyboard.GetState();
 
-            if (kstate.IsKeyDown(Keys.Up))
-                Position.Y -= Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (kstate.IsKeyDown(Keys.Down))
-                Position.Y += Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (kstate.IsKeyDown(Keys.Left))
-                Position.X -= Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (kstate.IsKeyDown(Keys.Right))
-                Position.X += Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (kstate.IsKeyDown(Input.Up))
+                Velocity.Y -= SpeedY * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (kstate.IsKeyDown(Input.Down))
+                Velocity.Y += SpeedY * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
 

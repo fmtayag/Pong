@@ -29,17 +29,43 @@ namespace Pong
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            // TODO: use this.Content to load your game content here
             Texture2D playerTexture = Content.Load<Texture2D>("Paddle");
+            Texture2D ballTexture = Content.Load<Texture2D>("Ball");
+
             _sprites = new List<Sprite>()
             {
                 new Player(playerTexture)
                 {
-                    Position = new Vector2(100,100),
-                    Color = Color.Blue,
-                    Speed = 300f
+                    Position = new Vector2(50,50),
+                    Color = Color.White,
+                    SpeedY = 300f,
+                    Input = new Input()
+                    {
+                        Up = Keys.W,
+                        Down = Keys.S
+                    }
+                },
+                new Player(playerTexture)
+                {
+                    Position = new Vector2(_graphics.PreferredBackBufferWidth - 50, _graphics.PreferredBackBufferHeight - 150),
+                    Color = Color.White,
+                    SpeedY = 300f,
+                    Input = new Input()
+                    {
+                        Up = Keys.Up,
+                        Down = Keys.Down
+                    }
+                },
+                new Ball(ballTexture)
+                {
+                    Position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2),
+                    Color = Color.White,
+                    SpeedX = -200f,
+                    Graphics = _graphics
                 }
             };
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
