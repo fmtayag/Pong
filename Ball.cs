@@ -9,17 +9,19 @@ namespace Pong
     class Ball : Sprite 
     {
         public GraphicsDeviceManager Graphics;
+        public static float initSpeed = 200f;
+        public float initSpeedX = initSpeed;
+        public float initSpeedY = -initSpeed;
 
         public Ball(Texture2D texture) : base(texture)
         {
-            SpeedY = 100;
+            SpeedX = initSpeedX;
+            SpeedY = initSpeedY;
         }
 
         public override void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            Velocity.X = SpeedX * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            Velocity.Y = SpeedY * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
+            // Sprite collision check
             foreach (Sprite sprite in sprites)
             {
                 if (sprite == this)
@@ -30,20 +32,30 @@ namespace Pong
                     SpeedX = -SpeedX;
             }
 
-            if (this.Position.Y > Graphics.PreferredBackBufferHeight - this.Rectangle.Height)
-                SpeedY = -100;
-            if (this.Position.Y <= 0)
-                SpeedY = 100;
-
-            if (this.Position.X <= 0 || this.Position.X >= Graphics.PreferredBackBufferWidth)
+            // Restart if ball goes out of bounds
+            if (Position.X < 0 || Position.X > Graphics.PreferredBackBufferWidth)
             {
-                Position.X = Graphics.PreferredBackBufferWidth / 2;
-                Position.Y = Graphics.PreferredBackBufferHeight / 2;
+                Restart();
             }
-                
+
+            // Bounce back
+            if (Position.Y > Graphics.PreferredBackBufferHeight - Rectangle.Height || Position.Y < 0)
+            {
+                SpeedY = -SpeedY;
+            }
+
+            Velocity.X = SpeedX * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Velocity.Y = SpeedY * (float)gameTime.ElapsedGameTime.TotalSeconds;
             Position += Velocity;
-            Velocity = Vector2.Zero;
-            base.Update(gameTime, sprites);
+        }
+
+        public void Restart()
+        {
+            List<float> speeds = new List<float> { -initSpeed, initSpeed };
+            int rng = new Random().Next(speeds.Count);
+            Position = new Vector2(Graphics.PreferredBackBufferWidth / 2, Graphics.PreferredBackBufferHeight / 2);
+            SpeedX = speeds[rng];
+            SpeedY = speeds[rng];
         }
 
     }

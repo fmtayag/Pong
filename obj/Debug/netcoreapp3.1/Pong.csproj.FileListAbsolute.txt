@@ -24,3 +24,4 @@ C:\Users\Francis\source\repos\Pong\Pong\obj\Debug\netcoreapp3.1\Pong.genruntimec
 C:\Users\Francis\source\repos\Pong\Pong\bin\Debug\netcoreapp3.1\Content\ball.xnb
 C:\Users\Francis\source\repos\Pong\Pong\bin\Debug\netcoreapp3.1\Content\background.xnb
 C:\Users\Francis\source\repos\Pong\Pong\bin\Debug\netcoreapp3.1\Content\paddle.xnb
+C:\Users\Francis\source\repos\Pong\Pong\bin\Debug\netcoreapp3.1\Content\Score.xnb

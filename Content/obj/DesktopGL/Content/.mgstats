@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/Francis/source/repos/Pong/Pong/Content/background.png","C:/Users/Francis/source/repos/Pong/Pong/Content/bin/DesktopGL/Content/background.xnb","TextureProcessor","Texture2DContent",2280,1536085,0.2312833
 "C:/Users/Francis/source/repos/Pong/Pong/Content/ball.png","C:/Users/Francis/source/repos/Pong/Pong/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",132,1109,0.2134298
-"C:/Users/Francis/source/repos/Pong/Pong/Content/paddle.png","C:/Users/Francis/source/repos/Pong/Pong/Content/bin/DesktopGL/Content/paddle.xnb","TextureProcessor","Texture2DContent",160,6485,0.0034316
+"C:/Users/Francis/source/repos/Pong/Pong/Content/File.spritefont","C:/Users/Francis/source/repos/Pong/Pong/Content/bin/DesktopGL/Content/Score.xnb","FontDescriptionProcessor","SpriteFontContent",2011,70690,0.3183032
+"C:/Users/Francis/source/repos/Pong/Pong/Content/paddle.png","C:/Users/Francis/source/repos/Pong/Pong/Content/bin/DesktopGL/Content/paddle.xnb","TextureProcessor","Texture2DContent",177,6485,0.1741788
